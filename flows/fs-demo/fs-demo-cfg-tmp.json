@@ -1,0 +1,39 @@
+{
+    "title"   : "fs-demo",
+    "desc"    : "A new FlowSmithy workflow",
+    "created" : "2026-may-20:16:45",
+    "tasks"   : [{
+        "name"       : "check-status",
+        "title"      : "Check Status",
+        "desc"       : "Confirms the workflow is running correctly before anything else executes.\nRunning on: [glob computer-name], cycleNo: [glob cycle], eventNo: [glob event]",
+        "type"       : "tcl-int",
+        "opts"       : [{
+            "type"   : "radio",
+            "label"  : "resp",
+            "parm"   : "resp",
+            "hint"   : "Controls how the script behaves",
+            "values" : ["*GOOD","FAIL","TRAP"],
+            "places" : ["normal completion","failed completion","Traps"]
+        },{
+            "type"  : "text",
+            "label" : "genstr",
+            "reqd"  : true,
+            "parm"  : "genstr",
+            "hint"  : "Content of generated lines",
+            "place" : "string to generate"
+        }],
+        "staleAfter" : "60secs"
+    },{
+        "title"    : "Remedial Action",
+        "name"     : "remedial-action",
+        "desc"     : "Demonstrates taking corrective action when a previous task fails - such as correcting a bad database entry. Stays hidden until Check Status reports FAIL or TRAP.",
+        "type"     : "tcl-int",
+        "whenFail" : "check-status"
+    },{
+        "title"     : "Publish Results",
+        "name"      : "publish-results",
+        "desc"      : "Publishes results downstream. Only runs once Check Status has succeeded -- proceeding without that confirmation risks publishing from a bad state.",
+        "type"      : "tcl-int",
+        "dependsOn" : "check-status"
+    }]
+}

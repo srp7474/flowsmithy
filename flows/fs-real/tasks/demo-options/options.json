@@ -1,0 +1,15 @@
+{
+    "Gen"          : 30,
+    "GenStr"       : "supplied string",
+    "Bool1"        : "",
+    "Trap"         : "none",
+    "boolFail"     : 0,
+    "Combo"        : "green",
+    "Input"        : "H:/v3/citc/inputs/becu/fetch-prod-people-recs.json",
+    "Input-mode"   : "old",
+    "BecuDir"      : "H:/v3/citc/inputs/becu",
+    "BecuDir-mode" : "old",
+    "runtime"      : "19:00:35",
+    "head"         : "=== Report Heading for 2026-jul-31 at 19:00:35 ===",
+    "custval"      : "Axxx"
+}

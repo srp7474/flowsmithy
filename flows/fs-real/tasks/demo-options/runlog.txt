@@ -1,0 +1,46 @@
+----------- TestArgsFS starting ----------
+  dateStr: 2026-jul-31
+    bool1: false
+      gen: 30
+  runtime: 19:00:35
+   genstr: supplied string
+     trap: none
+fileInput: H:/v3/citc/inputs/becu/fetch-prod-people-recs.json
+  becuDir: H:/v3/citc/inputs/becu
+     head: === Report Heading for 2026-jul-31 at 19:00:35 ===
+     str2: Axxx
+******************************************************
+* === Report Heading for 2026-jul-31 at 19:00:35 === *
+******************************************************
+supplied string 1
+supplied string 2
+supplied string 3
+supplied string 4
+supplied string 5
+supplied string 6
+supplied string 7
+supplied string 8
+supplied string 9
+supplied string 10
+supplied string 11
+supplied string 12
+supplied string 13
+supplied string 14
+supplied string 15
+supplied string 16
+supplied string 17
+supplied string 18
+supplied string 19
+supplied string 20
+supplied string 21
+supplied string 22
+supplied string 23
+supplied string 24
+supplied string 25
+supplied string 26
+supplied string 27
+supplied string 28
+supplied string 29
+supplied string 30
+----------- TestArgsFS ending ----------
+

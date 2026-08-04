@@ -1,0 +1,16 @@
+{
+    "winsize"    : {
+        "formW" : 1601,
+        "formH" : 901,
+        "title" : "fs-demo - FlowSmithy(r) Workflow",
+        "topX"  : 1223,
+        "topY"  : 344
+    },
+    "activeTask" : "publish-results",
+    "splitW"     : 340,
+    "globs"      : {
+        "computer-name" : "sy40",
+        "cycle"         : 39,
+        "event"         : 1055
+    }
+}

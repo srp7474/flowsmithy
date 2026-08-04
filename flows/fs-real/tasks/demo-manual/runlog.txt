@@ -1,0 +1,5 @@
+step-1 Example: Download transaction file has been marked completed
+step-2 Example: Get a signature has been marked completed
+step-3 Example: perform a back-up has been marked completed
+---- all manual steps for demo-manual completed
+2026-08-01 07:17:32  manual task completed OK

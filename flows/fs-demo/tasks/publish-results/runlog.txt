@@ -1,0 +1,6 @@
+================= published data from sy40 ====================
+cycle-no: 37
+event-no: 1055
+   runId: 37.1055
+================= end-of-report ====================
+2026-07-21 11:33:10  tcl-int completed OK

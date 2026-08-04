@@ -1,0 +1,16 @@
+{
+    "winsize"    : {
+        "formW" : 1787,
+        "formH" : 1070,
+        "title" : "FlowSmithy Real-World Demo — Java, Options, Dependencies, and WriteExcel - FlowSmithy(r) Workflow",
+        "topX"  : 1088,
+        "topY"  : 262
+    },
+    "activeTask" : "demo-excel",
+    "splitW"     : 373,
+    "globs"      : {
+        "cycleNo"  : 6,
+        "month"    : "April",
+        "run-date" : "2026-aug-03"
+    }
+}

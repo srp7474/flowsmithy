@@ -1,0 +1,20 @@
+DemoExcel v1.0 starting,
+   what= hello
+   out=H:/tcl/flows/fs-real/tasks/demo-excel/out-docs/demo-excel.xlsx
+HelloExcel writing H:/tcl/flows/fs-real/tasks/demo-excel/out-docs/demo-excel.xlsx
+InsertDef #hdr bC
+InsertDef #title b16C
+InsertDef #hdrBlue bCBG(pale-blue)
+InsertDef #sub -
+InsertDef #tot ~
+InsertDef #fin =
+InsertDef #lnk l
+InsertDef #lkc lC
+InsertDef #evn BG(245,255,245)
+InsertDef #odd BG(245,245,255)
+InsertDef #qtr BG(255,200,145)
+InsertDef #TOT BG(255,168,80)
+InsertDef :R R
+InsertDef :Rb Rb
+HelloExcel completed writing H:/tcl/flows/fs-real/tasks/demo-excel/out-docs/demo-excel.xlsx
+

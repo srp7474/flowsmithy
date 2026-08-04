@@ -1,0 +1,12 @@
+----------- TestArgsFS starting ----------
+  dateStr: 2026-aug-02
+    bool1: false
+      gen: 5
+     str2: Gen str for run date 2026-aug-02
+default value for line  1
+default value for line  2
+default value for line  3
+default value for line  4
+default value for line  5
+----------- TestArgsFS ending ----------
+

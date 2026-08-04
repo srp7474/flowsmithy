@@ -1,0 +1,237 @@
+{
+    "title" : "FlowSmithy Real-World Demo — Java, Options, Dependencies, and WriteExcel",
+    "setup" : "fs-real-setup.tcl",
+    "tasks" : [{
+        "title" : "Showcase Contexter",
+        "name"  : "demo-set-context",
+        "type"  : "tcl-int",
+        "desc"  : "This illustrates how to manage the global workflow context for subsequent tasks.",
+        "opts"  : [{
+            "type"   : "select",
+            "label"  : "month",
+            "parm"   : "month",
+            "hint"   : "Select the processing month",
+            "values" : ["*January","February","March","April","May","June","July","August","September","October","November","December"]
+        }]
+    },{
+        "title"    : "Showcase Options",
+        "name"     : "demo-options",
+        "type"     : "java",
+        "desc"     : "This illustrates options capability of the FlowSmithy workflow subsystem. It also shows the ability of the desciptions to pick up glob values such as cycleNo=[glob cycleNo]",
+        "runprops" : {
+            "javaMain" : "org.srp.fs.TestArgsFS",
+            "cpTag"    : "srp-util-fs"
+        },
+        "parms"    : [{
+            "parm"     : "datestr",
+            "parmExec" : "copy:run-date",
+            "hint"     : "current year glob"
+        }],
+        "opts"     : [{
+            "type"     : "text",
+            "label"    : "Gen",
+            "parm"     : "gen",
+            "hint"     : "Regex integer represents number of lines to generate",
+            "place"    : "number of lines to generate",
+            "regexPat" : "^[0-9]+$",
+            "regexMsg" : "Not integer"
+        },{
+            "type"  : "text",
+            "label" : "GenStr",
+            "parm"  : "genstr",
+            "hint"  : "Optional string",
+            "place" : "string to generate"
+        },{
+            "type"  : "check",
+            "parm"  : "bool1",
+            "hint"  : "Example boolean",
+            "label" : "Bool1",
+            "place" : "turns on bool1 option when checked"
+        },{
+            "type"   : "select",
+            "parm"   : "trap",
+            "label"  : "Trap",
+            "hint"   : "Example select - doubles to control how TstArgsFS operates. Required",
+            "values" : ["*none","fail","trap"],
+            "places" : ["no trap","gen FAIL","gen TRAP"]
+        },{
+            "type"  : "check",
+            "label" : "boolFail",
+            "parm"  : "boolFail",
+            "hint"  : "Cause unknown parm error when pass to TestArgsFS - see View Log",
+            "place" : "Cause unknown parm error"
+        },{
+            "type"   : "select",
+            "parm"   : "combo",
+            "label"  : "Combo",
+            "hint"   : "Example select - Optional",
+            "values" : ["none","green","red","blue"],
+            "places" : ["--none--","green","show red","set blue"]
+        },{
+            "type"  : "file",
+            "parm"  : "fileInput",
+            "hint"  : "Example of file input control",
+            "label" : "Input",
+            "place" : "file location"
+        },{
+            "type"  : "directory",
+            "parm"  : "becuDir",
+            "hint"  : "Example of directory input control",
+            "label" : "BecuDir",
+            "place" : "Base becu folder"
+        },{
+            "type"     : "text",
+            "label"    : "runtime",
+            "parm"     : "runtime",
+            "hint"     : "Generated run time value",
+            "custVal"  : "set-run-time",
+            "readonly" : true
+        },{
+            "type"     : "text",
+            "label"    : "head",
+            "parm"     : "head",
+            "hint"     : "Generated complex run time value",
+            "custVal"  : "build-head",
+            "readonly" : true
+        },{
+            "type"    : "text",
+            "label"   : "custval",
+            "parm"    : "str2",
+            "hint"    : "Shows custom validation",
+            "place"   : "value is required",
+            "custVal" : "str2-custval"
+        }]
+    },{
+        "title"    : "Showcase WhenFail",
+        "name"     : "demo-whenfail",
+        "type"     : "java",
+        "whenFail" : "demo-options",
+        "desc"     : "This illustrates the whenFail capability of the FlowSmithy workflow subsystem.",
+        "runprops" : {
+            "javaMain" : "org.srp.fs.TestArgsFS",
+            "cpTag"    : "srp-util-fs"
+        },
+        "parms"    : [{
+            "parm"     : "datestr",
+            "parmExec" : "lit:demo-date"
+        }],
+        "opts"     : [{
+            "type"  : "text",
+            "parm"  : "gen",
+            "label" : "Gen",
+            "hint"  : "number of lines to generate",
+            "regex" : "^[0-9]+$"
+        },{
+            "type"  : "text",
+            "parm"  : "genstr",
+            "label" : "GenStr",
+            "hint"  : "string to generate"
+        },{
+            "type"  : "check",
+            "parm"  : "bool1",
+            "label" : "bool1",
+            "place" : "turns on bool1 option when checked"
+        },{
+            "type"   : "select",
+            "parm"   : "trap",
+            "label"  : "trap",
+            "values" : ["*none","fail","trap"],
+            "places" : ["no trap","gen FAIL","gen TRAP"]
+        },{
+            "type"   : "select",
+            "parm"   : "combo",
+            "label"  : "combo",
+            "values" : ["*none","green","red","blue"],
+            "places" : ["--none--","green","show red","set blue"]
+        }]
+    },{
+        "title"     : "Showcase Depends",
+        "name"      : "demo-depends",
+        "type"      : "java",
+        "dependsOn" : "demo-options",
+        "desc"      : "This illustrates the dependsOn capability of the FlowSmithy workflow subsystem.",
+        "runprops"  : {
+            "javaMain" : "org.srp.fs.TestArgsFS",
+            "cpTag"    : "srp-util-fs"
+        },
+        "parms"     : [{
+            "parm"     : "datestr",
+            "parmExec" : "copy:run-date"
+        },{
+            "parm"     : "gen",
+            "parmExec" : "lit:5",
+            "hint"     : "number of generations"
+        },{
+            "parm"     : "str2",
+            "parmExec" : "eval:Gen str for run date [glob run-date]",
+            "hint"     : "example of evaluated value"
+        }],
+        "opts"      : [{
+            "type"   : "select",
+            "label"  : "trap",
+            "parm"   : "trap",
+            "hint"   : "Use trap to confirm Manual step cannot be run when this step is FAIL or TRAP status",
+            "values" : ["*none","fail","trap"],
+            "places" : ["no trap","gen FAIL","gen TRAP"]
+        }]
+    },{
+        "title"     : "Showcase Manual",
+        "name"      : "demo-manual",
+        "type"      : "manual",
+        "desc"      : "This illustrates how manual steps are integrated into the FlowSmithy workflow subsystem.",
+        "opts"      : [{
+            "type"  : "check",
+            "label" : "step-1",
+            "hint"  : "Click these when completed and then process Run Task",
+            "place" : "Example: Download transaction file"
+        },{
+            "type"  : "check",
+            "label" : "step-2",
+            "hint"  : "Click these when completed and then process Run Task",
+            "place" : "Example: Get a signature"
+        },{
+            "type"  : "check",
+            "label" : "step-3",
+            "hint"  : "Click these when completed and then process Run Task",
+            "place" : "Example: perform a back-up"
+        }],
+        "dependsOn" : "demo-depends"
+    },{
+        "title"    : "Showcase Excel Utility",
+        "name"     : "demo-excel",
+        "type"     : "java",
+        "recipe"   : "excel-managed-app",
+        "desc"     : "Show various capabilities of the WriteExcel routines as well as FlowSmithy's ability to start/stop/restart Excel.",
+        "runprops" : {
+            "javaMain"  : "org.srp.fs.demexl.DemoExcel",
+            "cpTag"     : "srp-util-fs",
+            "manageApp" : "demo-excel-manage-excel.tcl"
+        },
+        "parms"    : [{
+            "parm"     : "out",
+            "parmExec" : "eval:[glob ~taskPath]/out-docs/demo-excel.xlsx"
+        },{
+            "parm"     : "inp",
+            "parmExec" : "eval:[glob ~taskPath]/src-docs/demo-excel-inp.xlsx"
+        }],
+        "opts"     : [{
+            "type"   : "select",
+            "parm"   : "what",
+            "label"  : "Run what",
+            "values" : ["*basic","reader","cloner","chart","regress","hello"],
+            "places" : ["basic","reader","cloner","chart","regress","hello"]
+        },{
+            "type"   : "select",
+            "parm"   : "negfmt",
+            "label"  : "negfmt",
+            "values" : ["*none","color","sign","paren"],
+            "hint"   : "applies to certain tests only. See task help",
+            "places" : ["none","color","Use sign","Use paren"]
+        },{
+            "type"  : "check",
+            "label" : "excel",
+            "hint"  : "Run Excel program. Stop before, restart after",
+            "place" : "Invoke Excel Program at completion"
+        }]
+    }]
+}
