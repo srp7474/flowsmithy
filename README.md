@@ -1,6 +1,6 @@
 # FlowSmithy
 
-**[flowsmithy.com](https://flowsmithy.com)**
+**[flowsmithy.com](https://flowsmithy.com)** · [Demo video](https://youtu.be/FjhwmO6vAro)
 
 Lightweight, cross-platform task orchestration, written in pure Tcl/Tk.
 No installation beyond the Tcl/Tk runtime. Runs wherever Tcl/Tk runs —
