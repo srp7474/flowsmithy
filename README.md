@@ -42,7 +42,7 @@ genuinely useful.
 ## Install
 
 **Windows:** grab the latest installer from the
-[Releases](../../releases) page and run it. It bundles its own private
+[Releases](../../releases/latest) page and run it. It bundles its own private
 Tcl/Tk runtime — nothing else needs to be installed first.
 
 **From source (any platform):** install Tcl/Tk for your platform, then
